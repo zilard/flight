@@ -20,12 +20,12 @@ type airportStat struct {
 
 func main() {
     r := mux.NewRouter()
-    r.HandleFunc("/track", TrackFlight).Methods("POST")
+    r.HandleFunc("/track", trackFlight).Methods("POST")
     fmt.Printf("Server listening on :%d\n", PORT)
     log.Fatal(http.ListenAndServe(":" + strconv.Itoa(PORT), r))
 }
 
-func TrackFlight(w http.ResponseWriter, r *http.Request) {
+func trackFlight(w http.ResponseWriter, r *http.Request) {
     var flightList [][]string
     result := json.NewDecoder(r.Body).Decode(&flightList)
     if result != nil {
