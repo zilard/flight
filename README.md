@@ -28,7 +28,7 @@ airports.
 
 ## Request
 
-`POST /flight/ <LIST OF FLIGHTS>`
+`POST /track <LIST OF FLIGHTS>`
 
     curl -i -X POST -H "Content-Type:application/json" \
     http://localhost:8080/track \
